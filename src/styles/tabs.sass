@@ -1,0 +1,28 @@
+.navigation,
+.tabs
+    display: flex
+    padding: var(--Space-0, 0px)
+    align-items: center
+    gap: var(--Space-8, 8px)
+    
+.tab__item,
+.navigation__link
+    display: flex
+    padding: var(--Space-12, 12px) var(--Space-20, 20px)
+    justify-content: center
+    align-items: center
+    gap: var(--Space-0, 0px)
+    border-radius: 12px
+    
+.tab__item--selected, 
+.navigation__link--selected
+    pointer-events: none
+    cursor: default
+    background: var(--Primary-10, rgba(255, 70, 70, 0.10))
+    
+.tab__item--selected
+    color: var(--Static-White, #FFF)
+    
+.navigation__link--selected
+    color: var(--Primary, #FF4646)
+
