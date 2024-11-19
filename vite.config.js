@@ -1,17 +1,30 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
-import fs from 'fs/promises';
+
+const jsToBottomNoModule = () => {
+    return {
+        name: "no-attribute",
+        transformIndexHtml(html) {
+            let scriptTag = html.match(/<script[^>]*>(.*?)<\/script[^>]*>/)[0];
+            html = html.replace(scriptTag, "");
+            html = html.replace("</body>", "\t" + scriptTag + "\n</body>");
+            return html;
+        }
+    }
+}
 
 export default defineConfig({
     base: './',
     build: {
-        polyfillModulePreload: false,
+        modulePreload: {
+            polyfill: false,
+        },
         cssCodeSplit: true,
         minify: false,
         rollupOptions: {
             input: {
-                home: resolve(__dirname, 'src/index.html'),
-                gifts: resolve(__dirname, 'src/gifts.html'),
+                home: resolve(__dirname, 'index.html'),
+                gifts: resolve(__dirname, 'gifts.html'),
             },
             output: {
                 entryFileNames: 'assets/[name].js',
@@ -20,49 +33,5 @@ export default defineConfig({
             },
         },
     },
-    plugins: [
-        {
-            name: 'adjust-html-plugin',
-            closeBundle: async () => {
-                const distDir = resolve(__dirname, 'dist');
-                const srcDir = resolve(distDir, 'src');
-
-                try {
-                    await fs.mkdir(distDir, { recursive: true });
-
-                    const files = await fs.readdir(srcDir);
-
-                    for (const file of files) {
-                        if (file.endsWith('.html')) {
-                            const source = resolve(srcDir, file);
-                            const destination = resolve(distDir, file);
-
-                            await fs.rename(source, destination);
-
-                            const content = await fs.readFile(destination, 'utf-8');
-                            const updatedContent = content.replace(
-                                /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi,
-                                (scriptTag) => {
-                                    return ''; //
-                                }
-                            ).replace(
-                                '</body>',
-                                (match) => {
-                                    const scriptTag = content.match(
-                                        /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/i
-                                    )?.[0] || '';
-                                    return `${scriptTag}\n${match}`;
-                                }
-                            );
-                            await fs.writeFile(destination, updatedContent, 'utf-8');
-                        }
-                    }
-
-                    await fs.rmdir(srcDir);
-                } catch (err) {
-                    console.error('[adjust-html-plugin] Error adjusting HTML:', err);
-                }
-            },
-        },
-    ],
+    plugins: [jsToBottomNoModule()],
 });
