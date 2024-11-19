@@ -1,2 +1,3 @@
-import '../styles/home.sass'
+import './global.js';
+import '../styles/home.sass';
 console.log('test home');
