@@ -14,3 +14,31 @@
     cursor: pointer
     color: var(--Dark, #181C29)
     background: var(--Static-White, #FFF)
+
+.arrow-button
+    display: flex
+    width: 56px
+    height: 56px
+    padding: var(--Space-0, 0px)
+    justify-content: center
+    align-items: center
+    gap: var(--Space-0, 0px)
+    border-radius: 20px
+    border: 1px solid var(--Static-White, #FFF)
+    color: var(--Static-White, #FFF)
+
+.arrow-button:hover:not([disabled])
+    border: 1px solid var(--Static-White, #FFF)
+    background: var(--Static-White, #FFF)
+    cursor: pointer
+
+    img
+        filter: brightness(0) saturate(100%) invert(43%) sepia(27%) saturate(1871%) hue-rotate(317deg) brightness(95%) contrast(118%)
+
+
+.arrow-button[disabled]
+    border: 1px solid var(--Static-White-40, #ffffff66)
+    color: var(--Static-White-40, #ffffff66)
+
+.arrow-button--left img
+    rotate: 180deg
