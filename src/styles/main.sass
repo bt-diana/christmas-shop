@@ -10,16 +10,21 @@
     align-items: center
 
 // Home page
-// Hero section
-.hero-section
-    background-image:  url('../assets/bg-ball.png')
+// Hero section, CTA section
+.hero-section, .cta-section
     background-repeat: no-repeat
     background-size: cover
     background-position: center
     max-width: 1440px
     margin: auto
 
-.hero-section__content
+.hero-section
+    background-image:  url('../assets/bg-ball.png')
+
+.cta-section
+    background-image:  url('../assets/bg-forest.png')
+
+.hero-content
     display: flex
     max-width: 426px
     padding: var(--Space-60, 60px) var(--Space-0, 0px)
@@ -30,6 +35,59 @@
     align-self: stretch
     text-align: center
     color: #FFF
+
+// CTA section
+.cta-content-container
+    display: flex
+    max-width: 1276px
+    padding: var(--Space-60, 60px) var(--Space-0, 0px)
+    flex-direction: column
+    align-items: center
+    gap: var(--Space-0, 0px)
+    align-self: stretch
+
+.cta-content
+    display: flex
+    max-width: 426px
+    padding: var(--Space-60, 60px) var(--Space-0, 0px)
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    gap: var(--Space-20, 20px)
+    align-self: stretch
+    text-align: center
+    color: #FFF
+
+
+    
+.cta-content__timer-container
+    display: flex
+    padding: var(--Space-0, 0px)
+    flex-direction: column
+    align-items: center
+    gap: var(--Space-8, 8px)
+    align-self: stretch
+
+.timer
+    display: flex
+    padding: var(--Space-8, 8px) var(--Space-12, 12px) var(--Space-12, 12px) var(--Space-12, 12px)
+    align-items: center
+    gap: var(--Space-0, 0px)
+    border-radius: 20px
+    background: var(--Static-White-40, rgba(255, 255, 255, 0.40))
+
+.timer__value
+    display: flex
+    width: 80px
+    padding: var(--Space-0, 0px)
+    flex-direction: column
+    align-items: center
+    gap: var(--Space-0, 0px)
+
+.timer__separator
+    width: 1px
+    height: 20px
+    background: var(--Static-White-40, rgba(255, 255, 255, 0.40))
 
 // About section
 .about-content
