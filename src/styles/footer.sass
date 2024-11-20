@@ -35,12 +35,13 @@
     flex: 1 0 0
     border-radius: 20px
     background: var(--Content-Background, #ECF3F8)
-
+    
     img
         width: var(--Size-80, 80px)
         height: var(--Size-80, 80px)
     
     .action-large, h3
+        transition-duration: 0.2s
         align-self: stretch
         color: var(--Dark, #181C29)
         text-align: center
@@ -70,6 +71,7 @@
     gap: var(--Space-0, 0px)
 
     img
+        transition-duration: 0.2s
         width: 24px
         height: 24px
 
@@ -86,6 +88,9 @@
     align-items: center
     gap: var(--Space-12, 12px)
     align-self: stretch
+
+.social-media .caption
+    transition-duration: 0.2s
 
 .social-media .caption:hover
     cursor: pointer
