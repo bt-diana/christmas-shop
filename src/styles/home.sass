@@ -130,7 +130,15 @@
     height: 528px
 
 // Slider section, Best gifts section
-.slider-content, .best-content
+.slider-content
+    display: flex
+    width: 100%
+    flex-direction: column
+    gap: var(--Space-20, 20px)
+    align-self: stretch
+    color: #FFF
+
+.best-content
     display: flex
     max-width: 1276px
     width: 100%
@@ -141,6 +149,7 @@
     align-self: stretch
     color: #FFF
 
+
 .slider-description, .best-description
     display: flex
     padding: var(--Space-0, 0px)
@@ -149,17 +158,14 @@
     gap: var(--Space-12, 12px)
     align-self: stretch
 
-.slider-filler
-    height: 200px
-    width: 100%
-
 .slider-row
-    position: absolute
-    translate: 0 90px
-    width: 100%
-    max-width: 1440px
+    position: relative
     display: flex
     justify-content: center
+    width: calc(100% + 8px)
+    max-width: calc(1440px - (1440px - 1276px) / 2)
+    left: 8px
+    align-self: flex-end
 
 .slider
     display: flex
@@ -167,7 +173,6 @@
     align-items: center
     gap: 24px
     overflow: hidden
-    padding-left: 82px
 
 .slider-image-container    
     display: flex
@@ -191,7 +196,9 @@
     justify-content: flex-end
     align-items: center
     gap: var(--Space-20, 20px)
-    align-self: stretch
+    max-width: 1276px
+    align-self: center
+    width: 100%
 
 // Best gifts section
 .best-gifts
