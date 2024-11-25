@@ -1,3 +1,6 @@
+@use 'abstract/colors'
+@use 'abstract/numbers'
+
 .main__section
     background-image:  url('../assets/bg-snow.png')
     background-repeat: no-repeat
@@ -6,8 +9,8 @@
     max-width: calc(1440px - 8px * 2)
     margin: auto
 
-// Home page
-// Hero section, CTA section
+// home page
+// hero section, cta section
 .hero-section, .cta-section
     background-repeat: no-repeat
     background-size: cover
@@ -24,84 +27,84 @@
 .hero-content
     display: flex
     max-width: 426px
-    padding: var(--Space-60, 60px) var(--Space-0, 0px)
+    padding: numbers.$space-60 numbers.$space-0
     flex-direction: column
     justify-content: center
     align-items: center
-    gap: var(--Space-12, 12px)
+    gap: numbers.$space-12
     align-self: stretch
     text-align: center
-    color: #FFF
+    color: colors.$static-white
 
-// CTA section
+// cta section
 .cta-content-container
     display: flex
     max-width: 1276px
-    padding: var(--Space-60, 60px) var(--Space-0, 0px)
+    padding: numbers.$space-60 numbers.$space-0
     flex-direction: column
     align-items: center
-    gap: var(--Space-0, 0px)
+    gap: numbers.$space-0
     align-self: stretch
 
 .cta-content
     display: flex
     max-width: 426px
-    padding: var(--Space-60, 60px) var(--Space-0, 0px)
+    padding: numbers.$space-60 numbers.$space-0
     flex-direction: column
     justify-content: center
     align-items: center
-    gap: var(--Space-20, 20px)
+    gap: numbers.$space-20
     align-self: stretch
     text-align: center
-    color: #FFF
+    color: colors.$static-white
     
 .cta-content__timer-container
     display: flex
-    padding: var(--Space-0, 0px)
+    padding: numbers.$space-0
     flex-direction: column
     align-items: center
-    gap: var(--Space-8, 8px)
+    gap: numbers.$space-8
     align-self: stretch
 
 .timer
     display: flex
-    padding: var(--Space-8, 8px) var(--Space-12, 12px) var(--Space-12, 12px) var(--Space-12, 12px)
+    padding: numbers.$space-8 numbers.$space-12 numbers.$space-12 numbers.$space-12
     align-items: center
-    gap: var(--Space-0, 0px)
+    gap: numbers.$space-0
     border-radius: 20px
-    background: var(--Static-White-40, rgba(255, 255, 255, 0.40))
+    background: colors.$static-white-40
 
 .timer__value
     display: flex
     width: 80px
-    padding: var(--Space-0, 0px)
+    padding: numbers.$space-0
     flex-direction: column
     align-items: center
-    gap: var(--Space-0, 0px)
+    gap: numbers.$space-0
 
 .timer__separator
     width: 1px
     height: 20px
-    background: var(--Static-White-40, rgba(255, 255, 255, 0.40))
+    background: colors.$static-white-40
 
-// About section
+// about section
 .about-content
     display: flex
     max-width: 1276px
-    padding: var(--Space-0, 0px)
+    padding: numbers.$space-0
     align-items: center
-    gap: var(--Space-0, 0px)
+    gap: numbers.$space-0
     flex: 1 0 0
     border-radius: 20px
-    background: #FFF
+    background: colors.$static-white
 
 .about-description-container
     display: flex
-    padding: var(--Space-0, 0px) var(--Space-60, 60px)
+    padding: numbers.$space-0 numbers.$space-60
     flex-direction: column
     justify-content: center
     align-items: flex-start
-    gap: var(--Space-0, 0px)
+    gap: numbers.$space-0
     flex: 1 0 0
     align-self: stretch
     width: 50%
@@ -109,15 +112,15 @@
 .about-description
     display: flex
     max-width: 426px
-    padding: var(--Space-60, 60px) var(--Space-0, 0px)
+    padding: numbers.$space-60 numbers.$space-0
     flex-direction: column
     justify-content: center
     align-items: flex-start
-    gap: var(--Space-20, 20px)
+    gap: numbers.$space-20
     align-self: stretch
 
 .about-description__caption
-    color: var(--Primary, #FF4646)
+    color: colors.$primary
 
 .about-image-container
     display: flex
@@ -129,33 +132,33 @@
     object-fit: cover
     height: 528px
 
-// Slider section, Best gifts section
+// slider section, best gifts section
 .slider-content
     display: flex
     width: 100%
     flex-direction: column
-    gap: var(--Space-20, 20px)
+    gap: numbers.$space-20
     align-self: stretch
-    color: #FFF
+    color: colors.$static-white
 
 .best-content
     display: flex
     max-width: 1276px
     width: 100%
-    padding: var(--Space-0, 0px)
+    padding: numbers.$space-0
     flex-direction: column
     align-items: center
-    gap: var(--Space-20, 20px)
+    gap: numbers.$space-20
     align-self: stretch
-    color: #FFF
+    color: colors.$static-white
 
 
 .slider-description, .best-description
     display: flex
-    padding: var(--Space-0, 0px)
+    padding: numbers.$space-0
     flex-direction: column
     align-items: center
-    gap: var(--Space-12, 12px)
+    gap: numbers.$space-12
     align-self: stretch
 
 .slider-row
@@ -169,7 +172,7 @@
 
 .slider
     display: flex
-    padding: var(--Space-0, 0px)
+    padding: numbers.$space-0
     align-items: center
     gap: 24px
     overflow: hidden
@@ -178,11 +181,11 @@
     display: flex
     width: 200px
     height: 200px
-    padding: var(--Space-0, 0px)
+    padding: numbers.$space-0
     flex-direction: column
     justify-content: center
     align-items: center
-    gap: var(--Space-0, 0px)
+    gap: numbers.$space-0
 
 .slider-image
     width: 200px
@@ -192,21 +195,21 @@
 
 .slider-arrows
     display: flex
-    padding: var(--Space-0, 0px)
+    padding: numbers.$space-0
     justify-content: flex-end
     align-items: center
-    gap: var(--Space-20, 20px)
+    gap: numbers.$space-20
     max-width: 1276px
     align-self: center
     width: 100%
 
-// Best gifts section
+// best gifts section
 .best-gifts
     display: flex
-    padding: var(--Space-0, 0px)
+    padding: numbers.$space-0
     justify-content: center
     align-items: flex-start
     align-content: flex-start
-    gap: var(--Space-12, 12px)
+    gap: numbers.$space-12
     align-self: stretch
     flex-wrap: wrap

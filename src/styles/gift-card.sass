@@ -1,58 +1,61 @@
+@use 'abstract/colors'
+@use 'abstract/numbers'
+    
 .gift-card
     display: flex
     width: 310px
     height: 342px
-    padding: var(--Space-0, 0px)
+    padding: numbers.$space-0
     flex-direction: column
     align-items: center
-    gap: var(--Space-0, 0px)
+    gap: numbers.$space-0
     border-radius: 20px
-    background: var(--Content-Background, #ECF3F8)
+    background: colors.$content-background
 
 .gift-card__image
     display: flex
     width: 310px
     height: 230px
     border-radius: 20px 20px 0 0
-    padding: var(--Space-0, 0px)
+    padding: numbers.$space-0
     flex-direction: column
     justify-content: center
     align-items: center
-    gap: var(--Space-0, 0px)
+    gap: numbers.$space-0
     flex-shrink: 0
     background-size: cover
     background-repeat: no-repeat
 
 .gift-card__description
     display: flex
-    padding: var(--Space-20, 20px)
+    padding: numbers.$space-20
     flex-direction: column
     align-items: flex-start
-    gap: var(--Space-8, 8px)
+    gap: numbers.$space-8
     flex: 1 0 0
     align-self: stretch
     border-radius: 20px
-    background: var(--Static-White, #FFF)
+    background: colors.$static-white
 
     h4
-        color: var(--Tag-Purple, #4361FF)
+        color: colors.$tag-purple
 
     h3
         overflow: hidden
-        color: var(--Dark, #181C29)
+        color: colors.$dark
         text-overflow: ellipsis
         transition-duration: 0.2s
 
 .gift-card__description--for-health
         h4
-            color: var(--Tag-Green, #06A44F)
+            color: colors.$tag-green
 
 .gift-card__description--for-harmony
         h4
-            color: var(--Tag-Pink, #FF43F7)
+            color: colors.$tag-pink
 
 .gift-card:hover
     cursor: pointer
 
     .gift-card__description h3
-        color: var(--Primary, #FF4646)
+        color: colors.$primary

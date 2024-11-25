@@ -1,56 +1,59 @@
+@use 'abstract/colors'
+@use 'abstract/numbers'
+    
 .contacts-section
     display: flex
-    padding: var(--Space-60, 60px) var(--Space-8, 8px)
+    padding: numbers.$space-60 numbers.$space-8
     flex-direction: column
     align-items: center
-    gap: var(--Space-0, 0px)
+    gap: numbers.$space-0
     align-self: stretch
-    background: var(--Static-White, #FFF)
+    background: colors.$static-white
 
 .contacts-content
     display: flex
     max-width: 1276px
     width: 100%
-    padding: var(--Space-0, 0px)
+    padding: numbers.$space-0
     flex-direction: column
     align-items: center
-    gap: var(--Space-60, 60px)
+    gap: numbers.$space-60
     align-self: stretch
     margin: auto
 
 .contacts
     display: flex
-    padding: var(--Space-0, 0px)
+    padding: numbers.$space-0
     justify-content: center
-    gap: var(--Space-12, 12px)
+    gap: numbers.$space-12
     align-self: stretch
 
 .contact-card
     display: flex
-    padding: var(--Space-20, 20px)
+    padding: numbers.$space-20
     flex-direction: column
     justify-content: center
     align-items: center
-    gap: var(--Space-12, 12px)
+    gap: numbers.$space-12
     flex: 1 0 0
     border-radius: 20px
-    background: var(--Content-Background, #ECF3F8)
+    background: colors.$content-background
     
     img
-        width: var(--Size-80, 80px)
-        height: var(--Size-80, 80px)
+        width: 80px
+        height: 80px
     
     .action-large, h3
         transition-duration: 0.2s
         align-self: stretch
-        color: var(--Dark, #181C29)
+        color: colors.$dark
         text-align: center
 
 .contact-card:hover
     cursor: pointer
 
     .action-large, h3
-        color: var(--Primary, #FF4646)
+        color: colors.$primary
 
 @media screen and (width <= 1060px)
     .contacts
@@ -58,17 +61,17 @@
 
 .socials
     display: flex
-    padding: var(--Space-0, 0px)
+    padding: numbers.$space-0
     justify-content: center
     align-items: flex-start
-    gap: var(--Space-12, 12px)
+    gap: numbers.$space-12
 
 .socials__social-container
     display: flex
-    padding: var(--Space-8, 8px)
+    padding: numbers.$space-8
     justify-content: center
     align-items: center
-    gap: var(--Space-0, 0px)
+    gap: numbers.$space-0
 
     img
         transition-duration: 0.2s
@@ -83,10 +86,10 @@
 
 .social-media
     display: flex
-    padding: var(--Space-0, 0px)
+    padding: numbers.$space-0
     flex-direction: column
     align-items: center
-    gap: var(--Space-12, 12px)
+    gap: numbers.$space-12
     align-self: stretch
 
 .social-media .caption

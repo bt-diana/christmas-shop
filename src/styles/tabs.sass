@@ -1,29 +1,32 @@
+@use 'abstract/colors'
+@use 'abstract/numbers'
+    
 .navigation,
 .tabs
     display: flex
-    padding: var(--Space-0, 0px)
+    padding: numbers.$space-0
     align-items: center
-    gap: var(--Space-8, 8px)
+    gap: numbers.$space-8
     
 .tabs__item,
 .navigation__link
     display: flex
-    padding: var(--Space-12, 12px) var(--Space-20, 20px)
+    padding: numbers.$space-12 numbers.$space-20
     justify-content: center
     align-items: center
-    gap: var(--Space-0, 0px)
+    gap: numbers.$space-0
     border-radius: 12px
     transition-duration: 0.2s
 
 .tabs__item:hover,    
 .tabs__item--selected
-    background: var(--Static-White-20, rgba(255, 255, 255, 0.20))
-    color: var(--Static-White, #FFF)
+    background: colors.$static-white-20
+    color: colors.$static-white
     
 .navigation__link:hover,
 .navigation__link--selected
-    background: var(--Primary-10, rgba(255, 70, 70, 0.10))
-    color: var(--Primary, #FF4646)
+    background: colors.$primary-10
+    color: colors.$primary
 
 .tabs__item:hover,   
 .navigation__link:hover

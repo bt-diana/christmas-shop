@@ -1,10 +1,13 @@
+@use 'abstract/colors'
+@use 'abstract/numbers'
+    
 .bar
     display: flex
-    padding: var(--Space-12, 12px) var(--Space-8, 8px)
+    padding: numbers.$space-12 numbers.$space-8
     justify-content: center
     align-items: center
     align-self: stretch
-    background: #FFF
+    background: colors.$static-white
 
 .bar-content
     display: flex
@@ -12,11 +15,11 @@
     width: 100%
     justify-content: space-between
     align-items: center
-    gap: var(--Space-12, 12px)
+    gap: numbers.$space-12
     align-self: stretch
     
 .header
     display: flex
-    padding: var(--Space-8, 8px) var(--Space-20, 20px)
+    padding: numbers.$space-8 numbers.$space-20
     align-items: center
-    gap: var(--Space-8, 8px)
+    gap: numbers.$space-8

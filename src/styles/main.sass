@@ -1,3 +1,6 @@
+@use 'abstract/colors'
+@use 'abstract/numbers'
+    
 section:first-child
     border-top-right-radius: 20px
     border-top-left-radius: 20px
@@ -8,8 +11,8 @@ section:last-child
 
 .main__section 
     display: flex
-    padding: var(--Space-60, 60px) var(--Space-8, 8px)
-    gap: var(--Space-0, 0px)
+    padding: numbers.$space-60 numbers.$space-8
+    gap: numbers.$space-0
     justify-content: center
     align-items: center
-    background-color: var(--Primary, #FF4646)
+    background-color: colors.$primary
