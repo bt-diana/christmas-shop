@@ -49,11 +49,12 @@
         color: colors.$dark
         text-align: center
 
-.contact-card:hover
-    cursor: pointer
+@media (hover: hover)
+    .contact-card:hover
+        cursor: pointer
 
-    .action-large, h3
-        color: colors.$primary
+        .action-large, h3
+            color: colors.$primary
 
 @media screen and (width <= 1060px)
     .contacts
@@ -78,11 +79,12 @@
         width: 24px
         height: 24px
 
-.socials__social-container:hover
-    cursor: pointer
+@media (hover: hover)
+    .socials__social-container:hover
+        cursor: pointer
 
-    img
-        filter: brightness(0) saturate(100%) invert(43%) sepia(27%) saturate(1871%) hue-rotate(317deg) brightness(95%) contrast(118%)
+        img
+            filter: brightness(0) saturate(100%) invert(43%) sepia(27%) saturate(1871%) hue-rotate(317deg) brightness(95%) contrast(118%)
 
 .social-media
     display: flex
@@ -95,6 +97,7 @@
 .social-media .caption
     transition-duration: 0.2s
 
-.social-media .caption:hover
-    cursor: pointer
-    filter: brightness(0) saturate(100%) invert(43%) sepia(27%) saturate(1871%) hue-rotate(317deg) brightness(95%) contrast(118%)
+@media (hover: hover)
+    .social-media .caption:hover
+        cursor: pointer
+        filter: brightness(0) saturate(100%) invert(43%) sepia(27%) saturate(1871%) hue-rotate(317deg) brightness(95%) contrast(118%)

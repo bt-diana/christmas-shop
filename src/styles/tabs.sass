@@ -19,19 +19,26 @@
     transition-duration: 0.2s
     text-align: center
 
-.tabs__item:hover,    
 .tabs__item--selected
     background: colors.$static-white-20
     color: colors.$static-white
-    
-.navigation__link:hover,
+
 .navigation__link--selected
     background: colors.$primary-10
     color: colors.$primary
 
-.tabs__item:hover,   
-.navigation__link:hover
-    cursor: pointer
+@media (hover: hover)
+    .tabs__item:hover
+        background: colors.$static-white-20
+        color: colors.$static-white
+    
+    .navigation__link:hover
+        background: colors.$primary-10
+        color: colors.$primary
+
+    .tabs__item:hover,   
+    .navigation__link:hover
+        cursor: pointer
 
 .tabs__item--selected,
 .navigation__link--selected
