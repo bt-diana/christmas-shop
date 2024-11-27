@@ -15,11 +15,11 @@ button
     color: colors.$static-white
     text-align: center
         
-@media (hover: hover)
-    .primary-button:hover
-        cursor: pointer
-        color: colors.$dark
-        background: colors.$static-white
+    @media (hover: hover)
+        &:hover
+            cursor: pointer
+            color: colors.$dark
+            background: colors.$static-white
 
 .arrow-button
     display: flex
@@ -33,19 +33,18 @@ button
     border: 1px solid colors.$static-white
     color: colors.$static-white
 
-@media (hover: hover)
-    .arrow-button:hover:not([disabled])
-        border: 1px solid colors.$static-white
-        background: colors.$static-white
-        cursor: pointer
+    &--left img
+        rotate: 180deg
 
-        img
-            filter: brightness(0) saturate(100%) invert(43%) sepia(27%) saturate(1871%) hue-rotate(317deg) brightness(95%) contrast(118%)
+    &[disabled]
+        border: 1px solid colors.$static-white-40
+        color: colors.$static-white-40
 
+    @media (hover: hover)
+        &:hover:not([disabled])
+            border: 1px solid colors.$static-white
+            background: colors.$static-white
+            cursor: pointer
 
-.arrow-button[disabled]
-    border: 1px solid colors.$static-white-40
-    color: colors.$static-white-40
-
-.arrow-button--left img
-    rotate: 180deg
+            img
+                filter: brightness(0) saturate(100%) invert(43%) sepia(27%) saturate(1871%) hue-rotate(317deg) brightness(95%) contrast(118%)

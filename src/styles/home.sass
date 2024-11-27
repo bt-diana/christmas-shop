@@ -18,14 +18,21 @@
     background-position: center
     max-width: calc(1440px - 8px * 2)
     margin: auto
-
-.hero-section
     background-image:  url('../assets/bg-ball.png'), url('../assets/bg-snow.png')
 
 .cta-section
     background-image:  url('../assets/bg-forest.png'), url('../assets/bg-snow.png')
 
-.hero-content
+.cta-content-container
+    display: flex
+    max-width: 1276px
+    padding: numbers.$space-60 numbers.$space-0
+    flex-direction: column
+    align-items: center
+    gap: numbers.$space-0
+    align-self: stretch
+
+.hero-content, .cta-content
     display: flex
     max-width: 426px
     padding: numbers.$space-60 numbers.$space-0
@@ -37,27 +44,8 @@
     text-align: center
     color: colors.$static-white
 
-// cta section
-.cta-content-container
-    display: flex
-    max-width: 1276px
-    padding: numbers.$space-60 numbers.$space-0
-    flex-direction: column
-    align-items: center
-    gap: numbers.$space-0
-    align-self: stretch
-
 .cta-content
-    display: flex
-    max-width: 426px
-    padding: numbers.$space-60 numbers.$space-0
-    flex-direction: column
-    justify-content: center
-    align-items: center
     gap: numbers.$space-20
-    align-self: stretch
-    text-align: center
-    color: colors.$static-white
     
 .cta-content__timer-container
     display: flex
@@ -75,18 +63,18 @@
     border-radius: 20px
     background: colors.$static-white-40
 
-.timer__value
-    display: flex
-    width: 80px
-    padding: numbers.$space-0
-    flex-direction: column
-    align-items: center
-    gap: numbers.$space-0
+    .timer__value
+        display: flex
+        width: 80px
+        padding: numbers.$space-0
+        flex-direction: column
+        align-items: center
+        gap: numbers.$space-0
 
-.timer__separator
-    width: 1px
-    height: 20px
-    background: colors.$static-white-40
+    .timer__separator
+        width: 1px
+        height: 20px
+        background: colors.$static-white-40
 
 // about section
 .about-content
@@ -100,6 +88,12 @@
     border-radius: 20px
     background: colors.$static-white
 
+    @media screen and (width <= 601px)
+        &
+            height: 880px
+            grid-template-columns: unset
+            grid-template-rows: 1fr 528px
+
 .about-description-container
     display: flex
     padding: numbers.$space-0 numbers.$space-60
@@ -110,15 +104,9 @@
     flex: 1 0 0
     align-self: stretch
 
-@media screen and (width <= 601px)
-    .about-content
-        height: 880px
-        grid-template-columns: unset
-        grid-template-rows: 1fr 528px
-
-    .about-description-container
-        padding: numbers.$space-0 numbers.$space-20
-        
+    @media screen and (width <= 601px)
+        &
+            padding: numbers.$space-0 numbers.$space-20
 
 .about-description
     display: flex
@@ -130,8 +118,8 @@
     gap: numbers.$space-20
     align-self: stretch
 
-.about-description__caption
-    color: colors.$primary
+    &__caption
+        color: colors.$primary
 
 .about-image-container
     display: flex
@@ -143,25 +131,17 @@
     height: 528px
 
 // slider section, best gifts section
-.slider-content
+.slider-content, .best-content
     display: flex
     width: 100%
+    padding: numbers.$space-0
     flex-direction: column
     gap: numbers.$space-20
     align-self: stretch
     color: colors.$static-white
 
 .best-content
-    display: flex
     max-width: 1276px
-    width: 100%
-    padding: numbers.$space-0
-    flex-direction: column
-    align-items: center
-    gap: numbers.$space-20
-    align-self: stretch
-    color: colors.$static-white
-
 
 .slider-description, .best-description
     display: flex
@@ -201,7 +181,6 @@
     width: 200px
     height: 200px
     border-radius: 20px
-
 
 .slider-arrows
     display: flex

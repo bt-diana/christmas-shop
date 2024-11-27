@@ -1,13 +1,14 @@
 @use '../abstract/colors'
 @use '../abstract/numbers'
     
-section:first-child
-    border-top-right-radius: 20px
-    border-top-left-radius: 20px
+section
+    &:first-child
+        border-top-right-radius: 20px
+        border-top-left-radius: 20px
 
-section:last-child
-    border-bottom-right-radius: 20px
-    border-bottom-left-radius: 20px
+    &:last-child
+        border-bottom-right-radius: 20px
+        border-bottom-left-radius: 20px
 
 .main__section 
     display: flex

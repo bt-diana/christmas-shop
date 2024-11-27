@@ -12,6 +12,10 @@
     border-radius: 20px
     background: colors.$content-background
 
+    @media (hover: hover)
+        &:hover
+            cursor: pointer
+
 .gift-card__image
     display: flex
     width: 310px
@@ -46,17 +50,14 @@
         text-overflow: ellipsis
         transition-duration: 0.2s
 
-.gift-card__description--for-health
-        h4
-            color: colors.$tag-green
+    &--for-health
+            h4
+                color: colors.$tag-green
 
-.gift-card__description--for-harmony
-        h4
-            color: colors.$tag-pink
+    &--for-harmony
+            h4
+                color: colors.$tag-pink
 
-@media (hover: hover)
-    .gift-card:hover
-        cursor: pointer
-
-        .gift-card__description h3
-            color: colors.$primary
+    @media (hover: hover)
+            .gift-card:hover & h3
+                color: colors.$primary

@@ -1,8 +1,8 @@
 @use '../abstract/colors'
 @use '../abstract/numbers'
     
-.navigation,
-.tabs
+.tabs,
+.navigation
     display: flex
     padding: numbers.$space-0
     align-items: center
@@ -19,28 +19,26 @@
     transition-duration: 0.2s
     text-align: center
 
-.tabs__item--selected
-    background: colors.$static-white-20
-    color: colors.$static-white
-
-.navigation__link--selected
-    background: colors.$primary-10
-    color: colors.$primary
-
-@media (hover: hover)
-    .tabs__item:hover
+    &--selected
+        pointer-events: none
+        cursor: default
         background: colors.$static-white-20
         color: colors.$static-white
-    
-    .navigation__link:hover
+
+    @media (hover: hover)
+        &:hover
+            cursor: pointer
+            background: colors.$static-white-20
+            color: colors.$static-white
+        
+
+.navigation__link
+    &--selected
         background: colors.$primary-10
         color: colors.$primary
 
-    .tabs__item:hover,   
-    .navigation__link:hover
-        cursor: pointer
+    @media (hover: hover)
+        &:hover
+            background: colors.$primary-10
+            color: colors.$primary
 
-.tabs__item--selected,
-.navigation__link--selected
-    pointer-events: none
-    cursor: default

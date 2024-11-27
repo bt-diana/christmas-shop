@@ -23,7 +23,6 @@
     align-items: center
     align-content: center
 
-
 .all-gifts-title
     display: flex
     max-width: 426px
@@ -36,23 +35,15 @@
     text-align: center
 
 .all-gifts-tabs
-    display: flex
-    padding: numbers.$space-0
-    align-items: center
-    gap: numbers.$space-8
     color: colors.$static-white
 
+    @media screen and (width <= 601px)
+        &
+            gap: numbers.$space-0
 
-@media screen and (width <= 601px)
-    .all-gifts-tabs
-        gap: numbers.$space-0
-
-    .tabs__item
-        display: flex
-        padding: numbers.$space-12 numbers.$space-8
-        justify-content: center
-        align-items: center
-        gap: numbers.$space-0 
+        .tabs__item
+            padding: numbers.$space-12 numbers.$space-8
+            gap: numbers.$space-0 
 
 .all-gifts-container
     display: flex

@@ -28,6 +28,10 @@
     gap: numbers.$space-12
     align-self: stretch
 
+    @media screen and (width <= 1060px)
+        &
+            flex-direction: column
+
 .contact-card
     display: flex
     padding: numbers.$space-20
@@ -49,16 +53,12 @@
         color: colors.$dark
         text-align: center
 
-@media (hover: hover)
-    .contact-card:hover
-        cursor: pointer
+    @media (hover: hover)
+        &:hover
+            cursor: pointer
 
-        .action-large, h3
-            color: colors.$primary
-
-@media screen and (width <= 1060px)
-    .contacts
-        flex-direction: column
+            .action-large, h3
+                color: colors.$primary
 
 .socials
     display: flex
@@ -79,12 +79,12 @@
         width: 24px
         height: 24px
 
-@media (hover: hover)
-    .socials__social-container:hover
-        cursor: pointer
+    @media (hover: hover)
+        &:hover
+            cursor: pointer
 
-        img
-            filter: brightness(0) saturate(100%) invert(43%) sepia(27%) saturate(1871%) hue-rotate(317deg) brightness(95%) contrast(118%)
+            img
+                filter: brightness(0) saturate(100%) invert(43%) sepia(27%) saturate(1871%) hue-rotate(317deg) brightness(95%) contrast(118%)
 
 .social-media
     display: flex
@@ -94,10 +94,10 @@
     gap: numbers.$space-12
     align-self: stretch
 
-.social-media .caption
-    transition-duration: 0.2s
+    .caption
+        transition-duration: 0.2s
 
-@media (hover: hover)
-    .social-media .caption:hover
-        cursor: pointer
-        filter: brightness(0) saturate(100%) invert(43%) sepia(27%) saturate(1871%) hue-rotate(317deg) brightness(95%) contrast(118%)
+        @media (hover: hover)
+            &:hover
+                cursor: pointer
+                filter: brightness(0) saturate(100%) invert(43%) sepia(27%) saturate(1871%) hue-rotate(317deg) brightness(95%) contrast(118%)
