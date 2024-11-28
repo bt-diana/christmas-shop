@@ -1,13 +1,13 @@
 @use '../abstract/colors'
 @use '../abstract/numbers'
 @use '../abstract/mixins'
-    
+
 .tabs,
 .navigation
     @include mixins.flex
     padding: numbers.$space-0
-    gap: numbers.$space-8
-    
+    gap: numbers.$space-8         
+
 .tabs__item,
 .navigation__link
     @include mixins.flex
@@ -17,26 +17,21 @@
     transition-duration: numbers.$time-200
     text-align: center
 
+@mixin tab-active($background, $color)
     &--selected
         pointer-events: none
         cursor: default
-        background: colors.$static-white-20
-        color: colors.$static-white
+        background: $background
+        color: $color
 
     @media (hover: hover)
         &:hover
             cursor: pointer
-            background: colors.$static-white-20
-            color: colors.$static-white
-        
+            background: $background
+            color: $color   
+
+.tabs__item
+    @include tab-active(colors.$static-white-20, colors.$static-white)
 
 .navigation__link
-    &--selected
-        background: colors.$primary-10
-        color: colors.$primary
-
-    @media (hover: hover)
-        &:hover
-            background: colors.$primary-10
-            color: colors.$primary
-
+    @include tab-active(colors.$primary-10, colors.$primary)
