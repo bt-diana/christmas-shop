@@ -1,32 +1,34 @@
 @use '../abstract/colors'
 @use '../abstract/numbers'
 @use '../abstract/mixins'
-    
-button
+
+%button
     transition-duration: numbers.$time-200
-    
-.primary-button
     @include mixins.flex
-    padding: numbers.$space-20 numbers.$space-32
+    padding: numbers.$space-0
     gap: numbers.$space-0
     border-radius: 20px
-    background: colors.$dark
-    color: colors.$static-white
     text-align: center
         
     @media (hover: hover)
         &:hover
             cursor: pointer
+
+.primary-button
+    @extend %button
+    padding: numbers.$space-20 numbers.$space-32
+    background: colors.$dark
+    color: colors.$static-white
+        
+    @media (hover: hover)
+        &:hover
             color: colors.$dark
             background: colors.$static-white
 
 .arrow-button
-    @include mixins.flex
-    padding: numbers.$space-0
-    gap: numbers.$space-0
+    @extend %button
     width: 56px
     height: 56px
-    border-radius: 20px
     border: 1px solid colors.$static-white
     color: colors.$static-white
 
@@ -41,7 +43,6 @@ button
         &:hover:not([disabled])
             border: 1px solid colors.$static-white
             background: colors.$static-white
-            cursor: pointer
 
             img
                 filter: colors.$filter-primary
