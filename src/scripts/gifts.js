@@ -1,2 +1,2 @@
 import './global.js';
-import '../styles/gifts.sass';
+import '../styles/pages/gifts.sass';

@@ -1,2 +1,2 @@
 import './global.js';
-import '../styles/home.sass';
+import '../styles/pages/home.sass';
