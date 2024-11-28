@@ -1,32 +1,28 @@
 @use '../abstract/colors'
 @use '../abstract/numbers'
+@use '../abstract/mixins'
     
 .bar
-    display: flex
+    @include mixins.flex
     padding: numbers.$space-12 numbers.$space-8
-    justify-content: center
-    align-items: center
     align-self: stretch
     background: colors.$static-white
 
 .bar-content
-    display: flex
+    @include mixins.flex($justify-content: space-between)
     max-width: 1276px
     width: 100%
-    justify-content: space-between
-    align-items: center
     gap: numbers.$space-12
     align-self: stretch
     
 .header
-    display: flex
+    @include mixins.flex
     padding: numbers.$space-8 numbers.$space-20
-    align-items: center
     gap: numbers.$space-8
 
 //navigation
 .navigation-container
-    display: flex
+    @include mixins.flex
 
 //burger    
 .burger

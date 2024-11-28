@@ -1,14 +1,13 @@
 @use '../abstract/colors'
 @use '../abstract/numbers'
+@use '../abstract/mixins'
     
 button
     transition-duration: numbers.$time-200
     
 .primary-button
-    display: flex
+    @include mixins.flex
     padding: numbers.$space-20 numbers.$space-32
-    justify-content: center
-    align-items: center
     gap: numbers.$space-0
     border-radius: 20px
     background: colors.$dark
@@ -22,13 +21,11 @@ button
             background: colors.$static-white
 
 .arrow-button
-    display: flex
+    @include mixins.flex
+    padding: numbers.$space-0
+    gap: numbers.$space-0
     width: 56px
     height: 56px
-    padding: numbers.$space-0
-    justify-content: center
-    align-items: center
-    gap: numbers.$space-0
     border-radius: 20px
     border: 1px solid colors.$static-white
     color: colors.$static-white

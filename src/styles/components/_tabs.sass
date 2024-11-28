@@ -1,19 +1,17 @@
 @use '../abstract/colors'
 @use '../abstract/numbers'
+@use '../abstract/mixins'
     
 .tabs,
 .navigation
-    display: flex
+    @include mixins.flex
     padding: numbers.$space-0
-    align-items: center
     gap: numbers.$space-8
     
 .tabs__item,
 .navigation__link
-    display: flex
+    @include mixins.flex
     padding: numbers.$space-12 numbers.$space-20
-    justify-content: center
-    align-items: center
     gap: numbers.$space-0
     border-radius: 12px
     transition-duration: numbers.$time-200

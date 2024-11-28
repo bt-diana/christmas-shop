@@ -1,5 +1,6 @@
 @use '../abstract/colors'
 @use '../abstract/numbers'
+@use '../abstract/mixins'
     
 section
     &:first-child
@@ -11,9 +12,7 @@ section
         border-bottom-left-radius: 20px
 
 .main__section 
-    display: flex
+    @include mixins.flex
     padding: numbers.$space-60 numbers.$space-8
     gap: numbers.$space-0
-    justify-content: center
-    align-items: center
     background-color: colors.$primary

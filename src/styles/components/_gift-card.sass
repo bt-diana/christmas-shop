@@ -1,13 +1,12 @@
 @use '../abstract/colors'
 @use '../abstract/numbers'
+@use '../abstract/mixins'
     
 .gift-card
-    display: flex
+    @include mixins.flex(column)
     width: 310px
     height: 342px
     padding: numbers.$space-0
-    flex-direction: column
-    align-items: center
     gap: numbers.$space-0
     border-radius: 20px
     background: colors.$content-background
@@ -17,24 +16,19 @@
             cursor: pointer
 
 .gift-card__image
-    display: flex
+    @include mixins.flex(column)
     width: 310px
     height: 230px
     border-radius: 20px 20px 0 0
     padding: numbers.$space-0
-    flex-direction: column
-    justify-content: center
-    align-items: center
     gap: numbers.$space-0
     flex-shrink: 0
     background-size: cover
     background-repeat: no-repeat
 
 .gift-card__description
-    display: flex
+    @include mixins.flex(column, $justify-content: normal, $align-items: flex-start)
     padding: numbers.$space-20
-    flex-direction: column
-    align-items: flex-start
     gap: numbers.$space-8
     flex: 1 0 0
     align-self: stretch

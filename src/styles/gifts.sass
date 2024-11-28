@@ -1,6 +1,7 @@
 // variables
 @use 'abstract/colors'
 @use 'abstract/numbers'
+@use 'abstract/mixins'
 
 // gifts page
 // hero section, cta section
@@ -13,23 +14,17 @@
     margin: auto
 
 .all-gifts-content
-    display: flex
+    @include mixins.flex(column)
     max-width: 1276px
     width: 100%
     padding: numbers.$space-0
     gap: numbers.$space-20
     align-self: stretch
-    flex-direction: column
-    align-items: center
-    align-content: center
 
 .all-gifts-title
-    display: flex
+    @include mixins.flex(column)
     max-width: 426px
     padding: numbers.$space-0
-    flex-direction: column
-    justify-content: center
-    align-items: center
     gap: numbers.$space-12
     color: colors.$static-white
     text-align: center
@@ -46,11 +41,8 @@
             gap: numbers.$space-0 
 
 .all-gifts-container
-    display: flex
+    @include mixins.flex($align-items: flex-start)
     padding: numbers.$space-0
-    justify-content: center
-    align-items: flex-start
-    align-content: flex-start
     gap: numbers.$space-12
     align-self: stretch
     flex-wrap: wrap

@@ -1,30 +1,26 @@
 @use '../abstract/colors'
 @use '../abstract/numbers'
+@use '../abstract/mixins'
     
 .contacts-section
-    display: flex
+    @include mixins.flex(column)
     padding: numbers.$space-60 numbers.$space-8
-    flex-direction: column
-    align-items: center
     gap: numbers.$space-0
     align-self: stretch
     background: colors.$static-white
 
 .contacts-content
-    display: flex
+    @include mixins.flex(column)
     max-width: 1276px
     width: 100%
     padding: numbers.$space-0
-    flex-direction: column
-    align-items: center
     gap: numbers.$space-60
     align-self: stretch
     margin: auto
 
 .contacts
-    display: flex
+    @include mixins.flex($align-items: stretch)
     padding: numbers.$space-0
-    justify-content: center
     gap: numbers.$space-12
     align-self: stretch
 
@@ -33,13 +29,9 @@
             flex-direction: column
 
 .contact-card
-    display: flex
+    @include mixins.flex(column, $flex: 1 0 0)
     padding: numbers.$space-20
-    flex-direction: column
-    justify-content: center
-    align-items: center
     gap: numbers.$space-12
-    flex: 1 0 0
     border-radius: 20px
     background: colors.$content-background
     
@@ -61,17 +53,13 @@
                 color: colors.$primary
 
 .socials
-    display: flex
+    @include mixins.flex($align-items: flex-start)
     padding: numbers.$space-0
-    justify-content: center
-    align-items: flex-start
     gap: numbers.$space-12
 
 .socials__social-container
-    display: flex
+    @include mixins.flex
     padding: numbers.$space-8
-    justify-content: center
-    align-items: center
     gap: numbers.$space-0
 
     img
@@ -87,10 +75,8 @@
                 filter: brightness(0) saturate(100%) invert(43%) sepia(27%) saturate(1871%) hue-rotate(317deg) brightness(95%) contrast(118%)
 
 .social-media
-    display: flex
+    @include mixins.flex(column)
     padding: numbers.$space-0
-    flex-direction: column
-    align-items: center
     gap: numbers.$space-12
     align-self: stretch
 
