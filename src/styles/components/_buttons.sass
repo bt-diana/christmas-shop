@@ -49,15 +49,32 @@
             img
                 filter: colors.$filter-primary
 
-
-// burger-button
-.burger-button
+// burger-button, close-button
+.close-button, .burger-button
     @extend %button
     width: 40px
     height: 40px
 
     hr
+        transition-duration: numbers.$time-200
         background-color: colors.$dark
         border: 1px solid colors.$dark
         border-radius: 7px
         width: 20px
+
+        & :first-child
+        position: relative
+        top: 0px
+    & :last-child
+        position: relative
+        top: 0px
+
+.close-button
+    & :first-child
+        rotate: 45deg
+        top: 5px
+
+    & :last-child
+        rotate: -45deg
+        top: -5px
+        
