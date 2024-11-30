@@ -1,7 +1,7 @@
 
     
 // Header 1
-h1
+@mixin h1()
     font-family: Montserrat
     font-size: 32px
     font-style: normal
@@ -10,8 +10,11 @@ h1
     letter-spacing: 5.76px
     text-transform: uppercase
 
+h1
+    @include h1
+
 // Header 2
-h2
+@mixin h2()
     font-family: Montserrat
     font-size: 24px
     font-style: normal
@@ -20,8 +23,11 @@ h2
     letter-spacing: 3.84px
     text-transform: uppercase
 
+h2
+    @include h2
+
 // Header 3
-h3
+@mixin h3()
     font-family: Montserrat
     font-size: 16px
     font-style: normal
@@ -30,8 +36,11 @@ h3
     letter-spacing: 1.28px
     text-transform: uppercase
 
+h3
+    @include h3
+
 // Header 4
-h4
+@mixin h4()
     font-family: Montserrat
     font-size: 12px
     font-style: normal
@@ -40,16 +49,22 @@ h4
     letter-spacing: 0.6px
     text-transform: uppercase
 
+h4
+    @include h4
+
 // Paragraph
-.paragraph
+@mixin paragraph()
     font-family: Montserrat
     font-size: 16px
     font-style: normal
     font-weight: 400
     line-height: 148% // 23.68px
 
+.paragraph
+    @include paragraph
+
 // Action Large
-.action-large
+@mixin action-large()
     font-family: Montserrat
     font-size: 24px
     font-style: normal
@@ -58,8 +73,11 @@ h4
     letter-spacing: 3.84px
     text-transform: uppercase
 
+.action-large
+    @include action-large
+    
 // Action Small
-.action-small
+@mixin action-small()
     font-family: Montserrat
     font-size: 12px
     font-style: normal
@@ -68,8 +86,11 @@ h4
     letter-spacing: 0.6px
     text-transform: uppercase
 
+.action-small
+    @include action-small
+
 // Caption
-.caption
+@mixin caption()
     font-family: Allura
     font-size: 24px
     font-style: normal
@@ -77,11 +98,17 @@ h4
     line-height: 100% // 24px
     letter-spacing: 1.2px
 
+.caption
+    @include caption
+
 // Slider Text
-.slider-text
+@mixin slider-text()
     font-family: Montserrat
     font-size: 80px
     font-style: normal
     font-weight: 600
     line-height: normal
     text-transform: uppercase
+
+.slider-text
+    @include slider-text
