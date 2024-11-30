@@ -1,5 +1,6 @@
 @use '../abstract/colors'
 @use '../abstract/numbers'
+@use '../abstract/typography'
 @use '../abstract/mixins'
     
 .bar
@@ -32,6 +33,20 @@
 @media screen and (width <= 768px)
     .navigation
         display: none !important
+        
+        &--open
+            display: flex !important
+            position: absolute
+            flex-direction: column
+            top: 64px
+            right: 0
+            background: white
+            width: 100%
+            height: calc(100% - 64px)
 
+        .navigation__link
+            @include typography.action-large
+        
     .navigation-container__buttton
         display: block !important
+    
