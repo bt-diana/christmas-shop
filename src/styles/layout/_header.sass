@@ -30,11 +30,25 @@
     display: none
 
 //resizing
+@keyframes slideout
+    0% 
+        translate: 100% 0
+
+    100% 
+        translate: 0 0
+
+@keyframes slidein
+    0% 
+        translate: 0 0
+
+    100% 
+        translate: 100% 0
+
 @media screen and (width <= 768px)
     .navigation
         display: none !important
         
-        &--open
+        &--open, &--close
             display: flex !important
             position: absolute
             z-index: 3
@@ -44,6 +58,14 @@
             background: white
             width: 100%
             height: calc(100% - 64px)
+
+        &--open
+            animation-duration: 0.2s
+            animation-name: slideout
+        
+        &--close
+            animation-duration: 0.2s
+            animation-name: slidein
 
         .navigation__link
             @include typography.action-large

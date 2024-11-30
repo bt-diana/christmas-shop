@@ -6,12 +6,17 @@ export default function bindOnNavigationButtonClick() {
         const navigation = document.querySelector('.navigation')
         if (navigation) {
             navigation.classList.toggle('navigation--open');
-            console.log(navigation.classList.contains('navigation--open'))
             const body = document.querySelector('body')
+
             if (navigation.classList.contains('navigation--open')) {
+                navigation.classList.remove('navigation--close');
                 body.style.overflowY = 'hidden';
                 window.scrollTo(0, 0);
             } else {
+                navigation.classList.add('navigation--close');
+                navigation.onanimationend = () => {
+                    navigation.classList.remove('navigation--close');
+                }
                 body.style.overflow = 'auto';
             }
         }
