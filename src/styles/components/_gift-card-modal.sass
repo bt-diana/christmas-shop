@@ -1,0 +1,98 @@
+@use '../abstract/colors'
+@use '../abstract/numbers'
+@use '../abstract/mixins'
+
+// modal
+.modal
+    @include mixins.flex
+    position: fixed
+    top: 0 
+    left: 0
+    width: calc(100vw - numbers.$space-8 * 2)
+    height: 100vh
+    padding: numbers.$space-0 numbers.$space-8
+    gap: numbers.$space-0
+    background: colors.$overlay
+
+.modal__content
+    @include mixins.flex(column, $flex: 1 0 0)
+    position: relative
+    max-width: 400px
+    border-radius: 20px
+    background: colors.$content-background
+
+.modal__close-button
+    position: absolute
+    right: 12px
+    top: 12px
+
+    hr
+        width: 30px
+
+// image
+.gift-details__image
+    @include mixins.flex(column)
+    width: 100%
+    height: 230px
+    border-radius: 20px 20px 0 0
+    padding: numbers.$space-0
+    gap: numbers.$space-0
+    flex-shrink: 0
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center
+
+// description
+.gift-details__description
+    @include mixins.flex(column, $align-items: flex-start)
+    padding: numbers.$space-20
+    gap: numbers.$space-20
+    align-self: stretch
+    border-radius: 20px
+    background: colors.$static-white
+    color: colors.$dark
+
+.gift-details-description__header
+    display: flex
+    padding: numbers.$space-0
+    flex-direction: column
+    align-items: flex-start
+    gap: numbers.$space-8
+    align-self: stretch
+
+.gift-details__superpowers
+    @include mixins.flex(column, $align-items: flex-star)
+    padding: numbers.$space-0
+    gap: numbers.$space-8
+    align-self: stretch
+
+// superpowers
+.superpowers-title
+    align-self: stretch
+
+.superpowers-container
+    @include mixins.flex(column, $align-items: flex-star)
+    padding: numbers.$space-0
+    gap: numbers.$space-0
+    align-self: stretch
+
+.superpower
+    @include mixins.flex($justify-content: space-between)
+    padding: numbers.$space-0
+    gap: numbers.$space-12
+    align-self: stretch
+
+    .superpower__name
+        flex: 1 0 0
+
+    .superpower__progressBar
+        @include mixins.flex($align-items: flex-start)
+        padding: numbers.$space-0
+        gap: numbers.$space-8
+
+        .progressBar__unit
+            width: 16px
+            height: 16px
+        
+            &--empty
+                filter: colors.$filter-primary-10

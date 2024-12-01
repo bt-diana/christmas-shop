@@ -4,7 +4,6 @@
 
 %button
     transition-duration: numbers.$time-200
-    @include mixins.flex
     padding: numbers.$space-0
     gap: numbers.$space-0
     border-radius: 20px
@@ -17,6 +16,7 @@
 // primary-button
 .primary-button
     @extend %button
+    @include mixins.flex
     padding: numbers.$space-20 numbers.$space-32
     background: colors.$dark
     color: colors.$static-white
@@ -29,6 +29,7 @@
 // arrow-button
 .arrow-button
     @extend %button
+    @include mixins.flex
     width: 56px
     height: 56px
     border: 1px solid colors.$static-white

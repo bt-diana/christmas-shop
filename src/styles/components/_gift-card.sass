@@ -2,6 +2,7 @@
 @use '../abstract/numbers'
 @use '../abstract/mixins'
     
+// gift card
 .gift-card
     @include mixins.flex(column)
     width: 310px
@@ -55,3 +56,7 @@
     @media (hover: hover)
             .gift-card:hover & h3
                 color: colors.$primary
+
+// gift card modal
+.gift-card__details
+    display: none

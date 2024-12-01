@@ -1,3 +1,4 @@
+import createGiftCardModal from './giftCardModal.js';
 import * as data from '../../assets/data/giftsImages.json';
 const giftsImages = data.default;
 
@@ -14,6 +15,7 @@ export default function createGiftCard(category, name, description, superpowers)
   const giftCard = document.createElement('div');
   const image = document.createElement('div');
   const categoryCode = category ? category.toLowerCase().split(' ').join('-') : null;
+  const giftsImagePath = categoryCode ? `./src/assets/images/${giftsImages[categoryCode]}` : null;
   const descriptionContainer = document.createElement('div');
   const categoryLabel = document.createElement('h4');
   const nameLabel = document.createElement('h3');
@@ -22,7 +24,7 @@ export default function createGiftCard(category, name, description, superpowers)
   if (categoryCode) descriptionContainer.classList.add('gift-card__description', `gift-card__description--${categoryCode}`);
   image.classList.add('gift-card__image');
   
-  if (categoryCode) image.style = `background-image: url('./src/assets/images/${giftsImages[categoryCode]}')`;
+  if (giftsImagePath) image.style = `background-image: url('${giftsImagePath}')`;
   if (category) categoryLabel.innerText = category;
   if (name) nameLabel.innerText = name;
 
@@ -31,6 +33,9 @@ export default function createGiftCard(category, name, description, superpowers)
 
   giftCard.appendChild(image);
   giftCard.appendChild(descriptionContainer);
+
+  const giftCardModal = createGiftCardModal(giftsImagePath, category, name, description, superpowers);
+  giftCard.appendChild(giftCardModal);
 
   return giftCard;
 }
