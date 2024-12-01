@@ -5,6 +5,7 @@
 // modal
 .modal
     @include mixins.flex
+    display: none
     position: fixed
     top: 0 
     left: 0
@@ -13,6 +14,9 @@
     padding: numbers.$space-0 numbers.$space-8
     gap: numbers.$space-0
     background: colors.$overlay
+
+    &--show
+        display: flex
 
 .modal__content
     @include mixins.flex(column, $flex: 1 0 0)

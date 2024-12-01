@@ -12,6 +12,7 @@ const giftsImages = data.default;
 </div>*/}
 
 export default function createGiftCard(category, name, description, superpowers) {
+  const gift = document.createElement('div');
   const giftCard = document.createElement('div');
   const image = document.createElement('div');
   const categoryCode = category ? category.toLowerCase().split(' ').join('-') : null;
@@ -20,6 +21,7 @@ export default function createGiftCard(category, name, description, superpowers)
   const categoryLabel = document.createElement('h4');
   const nameLabel = document.createElement('h3');
 
+  gift.classList.add('.gift')
   giftCard.classList.add('gift-card');
   if (categoryCode) descriptionContainer.classList.add('gift-card__description', `gift-card__description--${categoryCode}`);
   image.classList.add('gift-card__image');
@@ -35,7 +37,14 @@ export default function createGiftCard(category, name, description, superpowers)
   giftCard.appendChild(descriptionContainer);
 
   const giftCardModal = createGiftCardModal(giftsImagePath, category, name, description, superpowers);
-  giftCard.appendChild(giftCardModal);
+  gift.appendChild(giftCard);
+  gift.appendChild(giftCardModal);
 
-  return giftCard;
+  giftCard.onclick = () => {
+    const body = document.querySelector('body');
+    giftCardModal.classList.add('modal--show');
+    body.style.overflowY = 'hidden';
+  }
+
+  return gift;
 }

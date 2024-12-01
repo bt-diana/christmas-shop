@@ -52,6 +52,20 @@ export default function creategiftCardDetails(giftsImagePath, category, name, de
   closeButton.appendChild(document.createElement('hr'));
   closeButton.appendChild(document.createElement('hr'));
 
+  closeButton.onclick = () => {
+    const body = document.querySelector('body');
+    modal.classList.remove('modal--show');
+    body.style.overflow = 'auto';
+  }
+
+  modal.onclick = (e) => {
+    if(e.target === e.currentTarget) {
+        const body = document.querySelector('body');
+        modal.classList.remove('modal--show');
+        body.style.overflow = 'auto';
+    }
+  }
+
   giftCardDetails.appendChild(closeButton);
 
   //image
@@ -151,4 +165,13 @@ function createSuperpowerProgressBar(n) {
   }
 
   return progressBar;
+}
+
+function handleCloseModal() {
+  const body = document.querySelector('body');
+  const modal = document.querySelector('modal--show');
+  
+  modal.classList.remove('modal--show');
+  body.style.overflow = 'auto';
+
 }
