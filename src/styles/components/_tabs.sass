@@ -18,17 +18,16 @@
     text-align: center
 
 @mixin tab-active($background, $color)
-    &--selected
-        pointer-events: none
-        cursor: default
-        background: $background
-        color: $color
-
     @media (hover: hover)
         &:hover
             cursor: pointer
             background: $background
             color: $color   
+
+    &--selected
+        cursor: default !important
+        background: $background
+        color: $color
 
 .tabs__item
     @include tab-active(colors.$static-white-20, colors.$static-white)

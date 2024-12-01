@@ -25,10 +25,11 @@ function handleOpenNavigation() {
 
     navigation.childNodes.forEach((navigationLink) => {
         navigationLink.onclick = handleCloseNavigation;
-    })
+    });
 }
 
 function handleCloseNavigation() {
+    console.log('click')
     const navigation = document.querySelector('.navigation');
     const body = document.querySelector('body');
     const navigationButton = document.querySelector('.navigation-container__buttton');
@@ -45,7 +46,3 @@ function handleCloseNavigation() {
         navigation.classList.remove('navigation--close');
     }
 }
-
-//TODO
-// When clicking on any link (interactive or non-interactive) in the menu, 
-// the burger menu hides, and the cross transforms into a burger icon: +2
