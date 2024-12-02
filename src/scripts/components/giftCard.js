@@ -21,7 +21,8 @@ export default function createGiftCard(category, name, description, superpowers)
   const categoryLabel = document.createElement('h4');
   const nameLabel = document.createElement('h3');
 
-  gift.classList.add('.gift')
+  gift.classList.add('gift');
+  gift.dataset.category = categoryCode;
   giftCard.classList.add('gift-card');
   if (categoryCode) descriptionContainer.classList.add('gift-card__description', `gift-card__description--${categoryCode}`);
   image.classList.add('gift-card__image');

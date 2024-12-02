@@ -12,6 +12,6 @@ const selectedGifts =  gifts.sort(() => 0.5 - Math.random()).slice(0, bestGiftsA
 
 selectedGifts.forEach((gift) => {
     const giftCard = createGiftCard(gift.category, gift.name, gift.description, gift.superpowers);
-    giftCard.classList.add('best-gifts__card');
+    giftCard.classList.add('best-gifts__gift');
     bestGiftsContainer.appendChild(giftCard);
 })
