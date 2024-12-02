@@ -1,5 +1,6 @@
 import '../global.js';
 import '../../styles/pages/home.sass';
+import regulateTimer from '../../scripts/components/timer.js';
 import createGiftCard from '../../scripts/components/giftCard.js';
 import * as data from '../../assets/data/gifts.json';
 
@@ -14,4 +15,7 @@ selectedGifts.forEach((gift) => {
     const giftCard = createGiftCard(gift.category, gift.name, gift.description, gift.superpowers);
     giftCard.classList.add('best-gifts__gift');
     bestGiftsContainer.appendChild(giftCard);
-})
+});
+
+//Timer
+regulateTimer();
