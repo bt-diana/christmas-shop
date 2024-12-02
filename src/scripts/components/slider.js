@@ -8,15 +8,25 @@ export default function bindSliderScroll() {
     : window.screen.width > 1276 ? ((window.screen.width - 1276) / 2) : null;
     slider.style.translate = paddingLeft ? paddingLeft + 'px' : null;
 
-    const sliderPartsAmount = window.screen.width <= 768 ? 6 : 3;
-
     rightArrow.onclick = () => {
+        const paddingLeft = window.screen.width > 1440 ? ((1440 - 1276) / 2) 
+            : window.screen.width > 1276 ? ((window.screen.width - 1276) / 2) : null;
+        const sliderPartsAmount = window.screen.width <= 768 ? 6 : 3;
         const newTranslate = +slider.style.translate.slice(0, -2) - (slider.offsetWidth + paddingLeft - sliderRow.offsetWidth + 8) / sliderPartsAmount + 'px';
         slider.style.translate = newTranslate;
     }
 
     leftArrow.onclick = () => {
+        const paddingLeft = window.screen.width > 1440 ? ((1440 - 1276) / 2) 
+            : window.screen.width > 1276 ? ((window.screen.width - 1276) / 2) : null;
+        const sliderPartsAmount = window.screen.width <= 768 ? 6 : 3;
         const newTranslate = +slider.style.translate.slice(0, -2) + (slider.offsetWidth + paddingLeft - sliderRow.offsetWidth + 8) / sliderPartsAmount + 'px';
         slider.style.translate = newTranslate;
     }
+
+    window.addEventListener("resize", () => {
+        const paddingLeft = window.screen.width > 1440 ? ((1440 - 1276) / 2) 
+            : window.screen.width > 1276 ? ((window.screen.width - 1276) / 2) : null;
+        slider.style.translate = paddingLeft ? paddingLeft + 'px' : null;
+    })
 }
