@@ -1,6 +1,7 @@
 import '../global.js';
 import '../../styles/pages/home.sass';
 import regulateTimer from '../../scripts/components/timer.js';
+import bindSliderScroll from '../../scripts/components/slider.js';
 import createGiftCard from '../../scripts/components/giftCard.js';
 import * as data from '../../assets/data/gifts.json';
 
@@ -19,3 +20,6 @@ selectedGifts.forEach((gift) => {
 
 //Timer
 regulateTimer();
+
+//Slider
+bindSliderScroll();

@@ -134,17 +134,17 @@
 
 .slider-row
     position: relative
-    @include mixins.flex
+    @include mixins.flex($justify-content: flex-start)
     width: calc(100% + 8px)
     max-width: calc(1440px - (1440px - 1276px) / 2)
     left: 8px
     align-self: flex-end
+    overflow: hidden
 
 .slider
     @include mixins.flex($justify-content: normal)
     padding: numbers.$space-0
     gap: 24px
-    overflow: hidden
 
 .slider-image-container    
     @include mixins.flex(column)
