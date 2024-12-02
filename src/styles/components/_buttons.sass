@@ -35,6 +35,9 @@
     border: 1px solid colors.$static-white
     color: colors.$static-white
 
+    .arrow--disabled
+        display: none
+
     &--left img
         rotate: 180deg
     
@@ -44,6 +47,12 @@
     &[disabled]
         border: 1px solid colors.$static-white-40
         color: colors.$static-white-40
+
+        .arrow--disabled
+            display: block
+
+        .arrow
+            display: none
 
     @media (hover: hover)
         &:hover:not([disabled])
