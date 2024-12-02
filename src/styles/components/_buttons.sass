@@ -37,6 +37,9 @@
 
     &--left img
         rotate: 180deg
+    
+    &--top img
+        rotate: -90deg
 
     &[disabled]
         border: 1px solid colors.$static-white-40
@@ -49,6 +52,22 @@
 
             img
                 filter: colors.$filter-primary
+
+.back-to-top-button
+    display: none
+    position: fixed
+    bottom: 8px
+    right: 8px
+    border-radius: 100px
+    border: 1px solid colors.$static-white
+    background: colors.$static-white
+
+    img
+        filter: colors.$filter-primary
+
+    @media screen and (width <= 768px)
+        &--show
+            display: block
 
 // burger-button, close-button
 .close-button, .burger-button
