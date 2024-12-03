@@ -7,6 +7,13 @@ export default function bindOnNavigationButtonClick() {
             handleOpenNavigation();
         }
     }
+
+    window.addEventListener("optimizedResize", () => {
+        if (window.innerWidth > 768) resetNavigation();
+    });
+    window.addEventListener("resize", () => {
+        if (window.innerWidth > 768) resetNavigation();
+    }); 
 }
 
 function handleOpenNavigation() {
@@ -29,7 +36,6 @@ function handleOpenNavigation() {
 }
 
 function handleCloseNavigation() {
-    console.log('click')
     const navigation = document.querySelector('.navigation');
     const body = document.querySelector('body');
     const navigationButton = document.querySelector('.navigation-container__buttton');
@@ -45,4 +51,18 @@ function handleCloseNavigation() {
     navigation.onanimationend = () => {
         navigation.classList.remove('navigation--close');
     }
+}
+
+function resetNavigation() {
+    const navigation = document.querySelector('.navigation');
+    const body = document.querySelector('body');
+    const navigationButton = document.querySelector('.navigation-container__buttton');
+
+    navigationButton.classList.remove('close-button');
+    navigationButton.classList.add('burger-button');
+
+    navigation.classList.remove('navigation--open');
+    navigation.classList.remove('navigation--close');
+
+    body.style.overflow = 'auto';
 }

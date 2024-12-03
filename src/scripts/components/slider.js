@@ -41,11 +41,18 @@ export default function bindSliderScroll() {
         }
     }
 
-    window.onresize = () => {
-        const paddingLeft = window.innerWidth > 1440 ? ((1440 - 1276) / 2) 
-            : window.innerWidth > 1276 ? ((window.innerWidth - 1276) / 2) : null;
-        slider.style.translate = paddingLeft ? paddingLeft + 'px' : null;
-        rightArrow.removeAttribute('disabled');
-        leftArrow.setAttribute('disabled', '');
-    }
+    window.addEventListener("optimizedResize", resetSlider);
+    window.addEventListener("resize", resetSlider); 
+}
+
+function resetSlider() {
+    const sliderRow = document.querySelector('.slider-row');
+    const slider = document.querySelector('.slider');
+    const leftArrow = document.querySelector('.slider-arrows__arrow-button--left');
+    const rightArrow = document.querySelector('.slider-arrows__arrow-button--right');
+    const paddingLeft = window.innerWidth > 1440 ? ((1440 - 1276) / 2) 
+        : window.innerWidth > 1276 ? ((window.innerWidth - 1276) / 2) : null;
+    slider.style.translate = paddingLeft ? paddingLeft + 'px' : null;
+    rightArrow.removeAttribute('disabled');
+    leftArrow.setAttribute('disabled', '');
 }
