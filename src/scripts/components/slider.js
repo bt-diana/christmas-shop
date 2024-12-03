@@ -6,17 +6,18 @@ export default function bindSliderScroll() {
 
     const paddingLeft = window.innerWidth > 1440 ? ((1440 - 1276) / 2) 
     : window.innerWidth > 1276 ? ((window.innerWidth - 1276) / 2) : null;
+
     slider.style.translate = paddingLeft ? paddingLeft + 'px' : null;
 
     rightArrow.onclick = () => {
         const paddingLeft = window.innerWidth > 1440 ? ((1440 - 1276) / 2) 
             : window.innerWidth > 1276 ? ((window.innerWidth - 1276) / 2) : null;
+        const paddingRight = paddingLeft ? paddingLeft - 8 : 8;
         const sliderPartsAmount = window.innerWidth <= 768 ? 6 : 3;
-        const newTranslate = +slider.style.translate.slice(0, -2) - (slider.offsetWidth + paddingLeft - sliderRow.offsetWidth + 8) / sliderPartsAmount;
+        const newTranslate = +slider.style.translate.slice(0, -2) - (slider.offsetWidth + paddingLeft - sliderRow.offsetWidth + paddingRight) / sliderPartsAmount;
         slider.style.translate = newTranslate + 'px';
 
-        console.log(Math.ceil(Math.abs(newTranslate)), slider.offsetWidth - sliderRow.offsetWidth + 8)
-        if (Math.ceil(Math.abs(newTranslate)) >= slider.offsetWidth - sliderRow.offsetWidth + 8) {
+        if (Math.ceil(Math.abs(newTranslate)) >= slider.offsetWidth - sliderRow.offsetWidth + paddingRight) {
             rightArrow.setAttribute('disabled', '');
         }
 
@@ -28,11 +29,12 @@ export default function bindSliderScroll() {
     leftArrow.onclick = () => {
         const paddingLeft = window.innerWidth > 1440 ? ((1440 - 1276) / 2) 
             : window.innerWidth > 1276 ? ((window.innerWidth - 1276) / 2) : null;
+        const paddingRight = paddingLeft ? paddingLeft - 8 : 8;
         const sliderPartsAmount = window.innerWidth <= 768 ? 6 : 3;
-        const newTranslate = +slider.style.translate.slice(0, -2) + (slider.offsetWidth + paddingLeft - sliderRow.offsetWidth + 8) / sliderPartsAmount;
+        const newTranslate = +slider.style.translate.slice(0, -2) + (slider.offsetWidth + paddingLeft - sliderRow.offsetWidth + paddingRight) / sliderPartsAmount;
         slider.style.translate = newTranslate + 'px';
 
-        if (Math.ceil(Math.abs(newTranslate)) < slider.offsetWidth - sliderRow.offsetWidth + 8) {
+        if (Math.ceil(Math.abs(newTranslate)) < slider.offsetWidth - sliderRow.offsetWidth + paddingRight) {
             rightArrow.removeAttribute('disabled');
         }
 
