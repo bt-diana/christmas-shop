@@ -114,15 +114,12 @@ function createSuperpowerProgressBar(n) {
 
   //units
   for (let i = 0; i < maxUnits; i++) {
-    const unit = document.createElement('img');
+    const unit = document.createElement('div');
 
     unit.classList.add('progressBar__unit');
     if (i >= n) {
       unit.classList.add('progressBar__unit--empty');
     }
-
-    unit.src = `./src/assets/images/${unitImage}`;
-    unit.alt = 'unit';
 
     progressBar.appendChild(unit);
   }
