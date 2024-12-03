@@ -1,39 +1,4 @@
-{/*   
-<div>
-
-  <button class='close-button'>
-    <hr>
-    <hr>
-  </button>
-
-  <div>
-    <img src='./src/assets/images/gift-for-harmony.png' alt='For Harmony'>
-  </div>
-
-  <div>
-    <div>
-      <h4>For Harmony</h4></div>
-    <div class='superpowers'>
-      <h4>Adds superpowers to:</h4>
-      <div class='superpower'>
-        <div class='superpower__name'>live</div>
-      </div>
-      <div class='superpower'>
-        <div class='superpower__name'>create</div>
-      </div>
-      <div class='superpower'>
-        <div class='superpower__name'>love</div>
-      </div>
-      <div class='superpower'>
-        <div class='superpower__name'>dream</div>
-      </div>
-    </div>
-  </div>
-
-</div> 
-*/}
-
-export default function creategiftCardDetails(giftsImagePath, category, name, description, superpowers) {
+export default function creategiftCardDetails(category, name, description, superpowers) {
   // modal
   const modal = document.createElement('div');
   modal.classList.add('gift-card__details', 'modal');
@@ -72,8 +37,6 @@ export default function creategiftCardDetails(giftsImagePath, category, name, de
   const image = document.createElement('div');
 
   image.classList.add('gift-details__image');
-
-  if (giftsImagePath) image.style = `background-image: url('${giftsImagePath}')`;
   
   //description
   const descriptionContainer = document.createElement('div');
