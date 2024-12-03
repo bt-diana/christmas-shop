@@ -45,6 +45,7 @@ export default function bindSliderScroll() {
         const paddingLeft = window.innerWidth > 1440 ? ((1440 - 1276) / 2) 
             : window.innerWidth > 1276 ? ((window.innerWidth - 1276) / 2) : null;
         slider.style.translate = paddingLeft ? paddingLeft + 'px' : null;
+        rightArrow.removeAttribute('disabled');
         leftArrow.setAttribute('disabled', '');
     }
 }
