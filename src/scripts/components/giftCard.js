@@ -12,7 +12,9 @@ export default function createGiftCard(category, name, description, superpowers)
   gift.classList.add('gift');
   gift.dataset.category = categoryCode;
   giftCard.classList.add('gift-card');
-  if (categoryCode) descriptionContainer.classList.add('gift-card__description', `gift-card__description--${categoryCode}`);
+  descriptionContainer.classList.add('gift-card__description', 'gift-description');
+  categoryLabel.classList.add('gift-description__category');
+  nameLabel.classList.add('gift-description__name');
   image.classList.add('gift-card__image');
   
   if (category) categoryLabel.innerText = category;

@@ -70,6 +70,18 @@
     gap: numbers.$space-8
     align-self: stretch
 
+// header
+.gift-details-header
+    &__category
+        color: colors.$tag-purple
+
+        .gift[data-category="for-health"] &
+            color: colors.$tag-green
+
+        .gift[data-category="for-harmony"] &
+            color: colors.$tag-pink
+
+
 // superpowers
 .superpowers-title
     align-self: stretch
@@ -88,6 +100,10 @@
 
     .superpower__name
         flex: 1 0 0
+        text-transform: lowercase
+
+        &::first-letter
+            text-transform: uppercase
 
     .superpower__progressBar
         @include mixins.flex($align-items: flex-start)

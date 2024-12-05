@@ -27,7 +27,7 @@
     background-size: cover
     background-repeat: no-repeat
 
-.gift-card__description
+.gift-description
     @include mixins.flex(column, $justify-content: normal, $align-items: flex-start)
     padding: numbers.$space-20
     gap: numbers.$space-8
@@ -36,23 +36,21 @@
     border-radius: 20px
     background: colors.$static-white
 
-    h4
-        color: colors.$tag-purple
-
-    h3
+    &__name
         overflow: hidden
         color: colors.$dark
         text-overflow: ellipsis
         transition-duration: numbers.$time-200
 
-    &--for-health
-            h4
-                color: colors.$tag-green
-
-    &--for-harmony
-            h4
-                color: colors.$tag-pink
-
     @media (hover: hover)
-            .gift-card:hover & h3
+            .gift-card:hover & &__name
                 color: colors.$primary
+
+    &__category
+        color: colors.$tag-purple
+
+        .gift[data-category="for-health"] &
+            color: colors.$tag-green
+
+        .gift[data-category="for-harmony"] &
+            color: colors.$tag-pink

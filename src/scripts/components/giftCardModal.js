@@ -44,13 +44,17 @@ export default function creategiftCardDetails(category, name, description, super
   descriptionContainer.classList.add('gift-details__description', 'gift-details-description');
 
   //header
+  const categoryCode = category ? category.toLowerCase().split(' ').join('-') : null;
+
   const headerContainer = document.createElement('div');
   const categoryLabel = document.createElement('h4');
   const nameLabel = document.createElement('h3');
   const descriptionLabel = document.createElement('div');
 
-  headerContainer.classList.add('gift-details-description__header');
-  descriptionLabel.classList.add('paragraph');
+  headerContainer.classList.add('gift-details-description__header', 'gift-details-header');
+  categoryLabel.classList.add('gift-details-header__category');
+  nameLabel.classList.add('gift-details-header__name');
+  descriptionLabel.classList.add('paragraph', 'gift-details-header__description');
 
   categoryLabel.innerText = category;
   nameLabel.innerText = name;
