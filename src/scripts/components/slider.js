@@ -44,8 +44,7 @@ export default function bindSliderScroll() {
     }
 
     window.addEventListener("optimizedResize", resetSlider);
-    window.addEventListener("resize", resetSlider); 
-}
+    window.addEventListener("resize", resetSlider); }
 
 function resetSlider() {
     const sliderRow = document.querySelector('.slider-row');

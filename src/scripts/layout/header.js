@@ -9,10 +9,14 @@ export default function bindOnNavigationButtonClick() {
     }
 
     window.addEventListener("optimizedResize", () => {
-        if (window.innerWidth > 768) resetNavigation();
+        if (window.innerWidth > 768 && navigationButton.classList.contains('close-button')) {
+            resetNavigation();
+        }
     });
     window.addEventListener("resize", () => {
-        if (window.innerWidth > 768) resetNavigation();
+        if (window.innerWidth > 768 && navigationButton.classList.contains('close-button')) {
+            resetNavigation();
+        }
     }); 
 }
 
