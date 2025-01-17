@@ -2,7 +2,7 @@
 
 This project is a **landing page for a Christmas ornament shop**.
 
-The primary goal of the project was to explore the capabilities of **SASS** and gain hands-on experience in **implementing the design from a Figma mockup** and building **responsive web pages**. 
+The primary goal of the project was to explore the capabilities of **SASS** and gain hands-on experience in **implementing the design from a [Design in Figma](https://www.figma.com/design/zTB01BwWZVoXYK5atH3eZT/Cristmas-Shop)** and building **responsive web pages**. 
 
 This website was developed as an assignment for The Rolling Scopes School [JavaScript / Front-end Course](https://rs.school/courses/javascript-preschool-ru).
 
