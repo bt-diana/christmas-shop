@@ -1,7 +1,7 @@
 {
   "name": "christmas-shop",
+  "description": "landing page for a Christmas ornament shop",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -11,14 +11,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rolling-scopes-school/djhsgfjk-JSFEPRESCHOOL2024Q2.git"
-  },
-  "author": "butyakova01@gmail.com",
-  "license": "",
-  "bugs": {
-    "url": "https://github.com/rolling-scopes-school/djhsgfjk-JSFEPRESCHOOL2024Q2/issues"
-  },
-  "homepage": "https://github.com/rolling-scopes-school/djhsgfjk-JSFEPRESCHOOL2024Q2#readme",
+    "url": "https://github.com/bt-diana/christmas-shop.git"
+  },  
+  "keywords": [
+    "javascript",
+    "sass",
+    "html",
+    "webpack",
+    "figma-to-code",
+    "responsive-website"
+  ],
+  "author": "Butiakova Diana <butyakova01@gmail.com> (https://github.com/bt-diana)",
+  "license": "MIT",
   "devDependencies": {
     "sass": "^1.81.0",
     "vite": "^5.4.11"
